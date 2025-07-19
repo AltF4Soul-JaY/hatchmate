@@ -1,6 +1,6 @@
 {
   "rewrites": [
     { "source": "/:path*", "destination": "/index.html" },
-    {"source": "https://hatchmate.ideahatch.xyz/terms.html", "destination": "/src/pages/Terms.html"}
+    {"source": "/terms.html", "destination": "/src/pages/Terms.html"}
   ]
 }
