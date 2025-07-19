@@ -14,7 +14,6 @@ export default defineConfig({
   },
   server: {
     open: true,
-    historyApiFallback: true,
   },
   resolve: {
     alias: {
