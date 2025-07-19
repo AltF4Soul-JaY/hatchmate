@@ -1,13 +1,133 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hatchmate Discord Bot</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #0e1013;
+      color: #f0f0f0;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #1f2230;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 2px solid #333;
+    }
+
+    header img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #00ffcc;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #cccccc;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 2rem;
+      background: #1a1d2e;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.1);
+    }
+
+    section h2 {
+      color: #00ffcc;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 0.8rem;
+    }
+
+    a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #12141c;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #aaaaaa;
+      border-top: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="hatchmatelogo.jpg" alt="Hatchmate Logo" />
+    <h1>Welcome to Hatchmate</h1>
+    <p>Your ultimate Discord bot for managing servers and engaging users.</p>
+  </header>
+
+  <main>
+    <section id="features">
+      <h2>Features</h2>
+      <ul>
+        <li>Customizable quiz games</li>
+        <li>Moderation tools (kick, ban, announce)</li>
+        <li>Interactive slash commands</li>
+        <li>Server statistics and member tracking</li>
+      </ul>
+    </section>
+
+    <section id="links">
+      <h2>Important Links</h2>
+      <ul>
+        <li><a href="/terms.html">Terms of Service</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&scope=bot">Add Hatchmate to your server</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Hatchmate. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Placeholder JS for future interactions
+    console.log("Welcome to Hatchmate — Bot loaded successfully.");
+  </script>
+</body>
 </html>
