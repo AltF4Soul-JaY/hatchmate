@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HatchMate Bot - Information & Commands</title>
+    <style>
+        /* General Body & Font Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0b; /* Deep black from logo background */
+            color: #e0e0e0; /* Off-white for readability */
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 25px;
+            background-color: #23272a; /* Very dark grey */
+            border-radius: 12px;
+            border: 1px solid #40444b;
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #7d91a1; /* Metallic silver-blue from egg */
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.8em;
+            color: #ffffff;
+            margin: 0;
+        }
+        .subtitle {
+            font-size: 1.1em;
+            color: #b9bbbe;
+            font-style: italic;
+        }
+
+        /* Section Headers */
+        h2 {
+            font-size: 2em;
+            color: #ffffff;
+            border-bottom: 2px solid #7d91a1; /* Silver-blue accent */
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        h3 {
+            font-size: 1.5em;
+            color: #f0f0f0;
+            margin-top: 25px;
+        }
+
+        /* Link and Navigation Styles */
+        a {
+            color: #7d91a1;
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        a:hover {
+            color: #fdd835; /* Yellow highlight from robot's chest */
+            text-decoration: underline;
+        }
+        .home-link {
+            display: block;
+            text-align: center;
+            padding: 15px;
+            background-color: #23272a;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-bottom: 1px solid #40444b;
+        }
+        .home-link:hover {
+            background-color: #7d91a1;
+            color: #0a0a0b;
+            text-decoration: none;
+        }
+
+        /* Lists */
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 12px;
+        }
+        strong {
+            color: #ffffff;
+        }
+
+        /* Code Block Styles */
+        code {
+            font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+            background-color: #2c2f33;
+            padding: 4px 7px;
+            border-radius: 5px;
+            font-size: 0.95em;
+        }
+        pre {
+            background-color: #1c1e21; /* Slightly darker than container */
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            position: relative;
+            border: 1px solid #40444b;
+        }
+        pre code {
+            padding: 0;
+            background: none;
+            border-radius: 0;
+        }
+        
+        /* Copy Button for Code Blocks */
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #7d91a1;
+            color: #0a0a0b;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            opacity: 0.7;
+            transition: all 0.2s;
+        }
+        .copy-button:hover {
+            opacity: 1;
+            background-color: #fdd835; /* Yellow highlight on hover */
+        }
+        .copy-button:active {
+            transform: translateY(1px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2em; }
+            h2 { font-size: 1.7em; }
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="home-link">🏠 Return to Home</a>
+
+    <div class="container">
+        <header class="header">
+            <img src="hatchmatelogo.jpg" alt="HatchMate Bot Logo" class="logo">
+            <h1>HatchMate</h1>
+            <p class="subtitle">Created by IdeaHatch</p>
+        </header>
+        
+        <p>HatchMate is a powerful, feature-rich, all-in-one Discord bot designed to handle everything your server needs. From a professional moderation suite and server statistics to a full-fledged casino-style economy, advanced quiz systems, and AI-powered chat, HatchMate brings all the tools you need into a single, reliable package.</p>
+
+        <h2>✨ Core Features</h2>
+        <ul>
+            <li><strong>👑 Full Moderation Suite:</strong> Keep your server safe and clean with powerful tools, including an automod for banned words, kick/ban/purge commands, and configurable welcome messages.</li>
+            <li><strong>💬 Community & Casino Economy:</strong> Make your server fun and interactive.
+                <ul>
+                    <li><strong>Leveling System:</strong> Members gain XP and level up by being active.</li>
+                    <li><strong>Economy System:</strong> Earn daily currency and check balances.</li>
+                    <li><strong>Casino Games:</strong> Gamble your earnings with <code>/coinflip</code> and <code>/slots</code>!</li>
+                    <li><strong>Leaderboard:</strong> Compete to see who is the richest in the server.</li>
+                </ul>
+            </li>
+            <li><strong>🧠 Advanced Quiz Engine:</strong> Host engaging quiz events.
+                <ul>
+                    <li><strong>Standard Quizzes:</strong> Create and run simple, single-question quizzes with optional prizes.</li>
+                    <li><strong>Multi-Stage Rapid Fire Events:</strong> A unique, professional-grade event system! Admins use a command to generate a private channel for question submission. After questions are added, a separate command opens a pop-up form to input all the answers. Finally, a start command runs a fully automated, timed quiz in a public channel, culminating in a frantic, "submit-all" answer phase.</li>
+                </ul>
+            </li>
+            <li><strong>🎉 Interactive Events:</strong>
+                <ul>
+                    <li><strong>Reaction Roles:</strong> A seamless way for users to self-assign roles using emoji reactions.</li>
+                    <li><strong>Giveaways:</strong> Easily start reaction-based giveaways with custom durations, winner counts, and optional role requirements.</li>
+                </ul>
+            </li>
+            <li><strong>🤖 AI-Powered Chat:</strong>
+                <ul>
+                    <li>Integrates with <strong>Google Gemini</strong> to allow users with a specific role to ask questions directly to a powerful AI model using the <code>/ask</code> command.</li>
+                </ul>
+            </li>
+            <li><strong>📈 Productivity & Utility:</strong> Essential tools for server management like <code>/serverinfo</code> and <code>/userinfo</code>.</li>
+            <li><strong>⚙️ Modern & Reliable:</strong>
+                <ul>
+                    <li>Built exclusively with modern Discord <strong>Slash (/) Commands</strong> for a clean user experience.</li>
+                    <li>Powered by a <strong>Supabase (PostgreSQL)</strong> backend for fast, persistent, and relational data storage.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>🚀 Getting Started</h2>
+        <h3>Prerequisites</h3>
+        <ol>
+            <li><strong>Python 3.8+</strong>: <a href="https://www.python.org/downloads/" target="_blank">Download Python</a></li>
+            <li><strong>Discord Bot Token</strong>: Create a bot on the <a href="https://discord.com/developers/applications" target="_blank">Discord Developer Portal</a>.</li>
+            <li><strong>Supabase Project</strong>: Create a free project on the <a href="https://supabase.com/dashboard" target="_blank">Supabase Dashboard</a>.</li>
+            <li><strong>Google Gemini API Key</strong>: Get a key from <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a>.</li>
+        </ol>
+
+        <h3>Installation</h3>
+        <ol>
+            <li><strong>Clone or Download this Project:</strong> Get all the files and place them in a folder.</li>
+            <li><strong>Run the SQL Scripts:</strong> In your Supabase project dashboard, go to the <strong>SQL Editor</strong>. Find the <code>.sql</code> files in the project folder and run their contents one by one. This will create the necessary database tables.</li>
+            <li><strong>Install Dependencies:</strong> Open a terminal in the project folder and run:
+                <pre><code>pip install -r requirements.txt</code></pre>
+            </li>
+            <li><strong>Configure Environment Variables:</strong> Create a file named <code>.env</code> in the main project folder. Open it and add your credentials. You can find your Supabase URL and Key in your Supabase project's API settings.
+                <pre><code># .env file
+DISCORD_TOKEN="YOUR_DISCORD_BOT_TOKEN_HERE"
+    
+GEMINI_API_KEY="YOUR_GOOGLE_GEMINI_API_KEY_HERE"
+    
+SUPABASE_URL="YOUR_SUPABASE_PROJECT_URL_HERE"
+SUPABASE_KEY="YOUR_SUPABASE_SERVICE_ROLE_KEY_HERE"</code></pre>
+            </li>
+            <li><strong>Run the Bot:</strong> Start the bot with the following command:
+                <pre><code>python main.py</code></pre>
+            </li>
+            <li><strong>Invite the Bot:</strong> In your Discord Developer Portal, go to the "OAuth2" > "URL Generator" tab. Select the <code>bot</code> and <code>applications.commands</code> scopes. Then, under "Bot Permissions," grant it <strong>Administrator</strong> permissions (this is the easiest way to ensure all features work). Use the generated URL to invite it to your server.</li>
+        </ol>
+
+        <h2>🤖 Command List</h2>
+        <p>HatchMate uses Slash (<code>/</code>) Commands for all features.</p>
+
+        <h3>Moderation</h3>
+        <ul>
+            <li><code>/purge <limit></code> - Deletes a specified number of messages.</li>
+            <li><code>/kick <member> [reason]</code> - Kicks a member.</li>
+            <li><code>/ban <member> [reason]</code> - Bans a member.</li>
+            <li><code>/automod addword <word></code> - Adds a word to the blocklist.</li>
+            <li><code>/automod removeword <word></code> - Removes a word from the blocklist.</li>
+            <li><code>/automod listwords</code> - Lists all blocked words.</li>
+        </ul>
+
+        <h3>Community & Economy</h3>
+        <ul>
+            <li><code>/level [@member]</code> - Checks a user's level.</li>
+            <li><code>/balance [@member]</code> - Checks a user's coin balance.</li>
+            <li><code>/daily</code> - Claims your daily coin reward.</li>
+            <li><code>/leaderboard</code> - Shows the server's richest users.</li>
+            <li><code>/coinflip <bet> <choice></code> - Bet on a 50/50 coin flip.</li>
+            <li><code>/slots <bet></code> - Play the emoji slot machine!</li>
+        </ul>
+
+        <h3>Event & Server Setup</h3>
+        <ul>
+            <li><code>/set_welcome <channel></code> - Sets the channel for welcome messages.</li>
+            <li><code>/roles add <message_id> <emoji> <role></code> - Creates a new reaction role.</li>
+            <li><code>/setup rapidfire_event <name> <admin_role> <participant_role></code> - Creates a new Rapid Fire event.</li>
+            <li><code>/setup rapidfire_answers <name></code> - Opens a form to enter the answers for a Rapid Fire event.</li>
+            <li><code>/set_gemini_role <role></code> - Sets the role required to use the <code>/ask</code> command.</li>
+        </ul>
+
+        <h3>Event Gameplay</h3>
+        <ul>
+            <li><code>/quiz create <name> ...</code> - Creates a standard, single-question quiz.</li>
+            <li><code>/quiz start <name></code> - Starts a standard quiz.</li>
+            <li><code>/giveaway start <prize> <duration> ...</code> - Starts a reaction-based giveaway.</li>
+            <li><code>/play rapidfire <name></code> - Starts a pre-configured Rapid Fire event.</li>
+            <li><code>/play rapidfire_open</code> - Opens the chat for the Rapid Fire answering phase.</li>
+        </ul>
+
+        <h3>Utility & AI</h3>
+        <ul>
+            <li><code>/serverinfo</code> - Displays stats about the server.</li>
+            <li><code>/userinfo [@member]</code> - Displays info about a user.</li>
+            <li><code>/ask <prompt></code> - Ask a question to the Gemini AI model.</li>
+        </ul>
+    </div>
+
+    <script>
+        // This script adds a "Copy" button to all <pre> blocks for a better user experience.
+        document.addEventListener('DOMContentLoaded', () => {
+            const preBlocks = document.querySelectorAll('pre');
+            preBlocks.forEach(block => {
+                const code = block.querySelector('code');
+                if (code) {
+                    const button = document.createElement('button');
+                    button.innerText = 'Copy';
+                    button.className = 'copy-button';
+
+                    button.addEventListener('click', () => {
+                        navigator.clipboard.writeText(code.innerText).then(() => {
+                            button.innerText = 'Copied!';
+                            setTimeout(() => {
+                                button.innerText = 'Copy';
+                            }, 2000);
+                        }).catch(err => {
+                            console.error('Failed to copy text: ', err);
+                        });
+                    });
+
+                    block.appendChild(button);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

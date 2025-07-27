@@ -3,131 +3,294 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hatchmate Discord Bot</title>
+  <title>HatchMate - The All-in-One Discord Bot</title>
   <style>
+    /* Google Font for a cleaner look */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    :root {
+      --bg-black: #0a0a0b;
+      --bg-dark-grey: #23272a;
+      --accent-silver: #7d91a1;
+      --accent-yellow: #fdd835;
+      --text-primary: #e0e0e0;
+      --text-secondary: #b9bbbe;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      background-color: #0e1013;
-      color: #f0f0f0;
+      background-color: var(--bg-black);
+      color: var(--text-primary);
       line-height: 1.6;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      overflow-x: hidden; /* Prevent horizontal scrollbars from animations */
     }
 
+    /* --- Header --- */
     header {
-      background: #1f2230;
-      padding: 2rem;
       text-align: center;
-      border-bottom: 2px solid #333;
+      padding: 4rem 2rem;
+      border-bottom: 1px solid #333;
+      background: linear-gradient(135deg, var(--bg-black), #1a1c20);
     }
 
     header img {
-      width: 80px;
-      height: 80px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      margin-bottom: 1rem;
+      border: 4px solid var(--accent-silver);
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    
+    header img:hover {
+        transform: scale(1.1) rotate(5deg);
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3.5rem;
+      font-weight: 700;
       margin-bottom: 0.5rem;
-      color: #00ffcc;
+      color: #fff;
     }
 
     header p {
-      font-size: 1.1rem;
-      color: #cccccc;
-    }
-
-    main {
-      flex: 1;
-      padding: 2rem;
-      max-width: 800px;
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      max-width: 600px;
       margin: auto;
     }
 
-    section {
-      margin-bottom: 2rem;
-      background: #1a1d2e;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 255, 204, 0.1);
+    /* JS Typing Animation */
+    .typing-cursor {
+        animation: blink 0.7s infinite;
+    }
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
     }
 
-    section h2 {
-      color: #00ffcc;
-      margin-bottom: 1rem;
+
+    /* --- Main Content --- */
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 1000px;
+      width: 100%;
+      margin: auto;
     }
 
-    ul {
-      list-style: none;
+    .section {
+        opacity: 0; /* Hidden by default for scroll animation */
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: #fff;
+    }
+    
+    /* Feature Cards */
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .feature-card {
+        background: var(--bg-dark-grey);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid #333;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    li {
-      margin-bottom: 0.8rem;
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
 
-    a {
-      color: #00d4ff;
-      text-decoration: none;
+    .feature-card h3 {
+        font-size: 1.5rem;
+        color: var(--accent-silver);
+        margin-bottom: 1rem;
     }
 
-    a:hover {
-      text-decoration: underline;
+    /* Links & Buttons Section */
+    .cta-section {
+        text-align: center;
+        margin-top: 4rem;
     }
 
+    .btn {
+        display: inline-block;
+        background: var(--accent-silver);
+        color: var(--bg-black);
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        margin: 0.5rem;
+    }
+    .btn:hover {
+        background-color: var(--accent-yellow);
+        transform: translateY(-3px);
+    }
+    .btn.primary {
+        background: var(--accent-yellow);
+    }
+    .btn.primary:hover {
+        background: #ffe680;
+    }
+
+    /* Footer */
     footer {
       background: #12141c;
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem;
       font-size: 0.9rem;
-      color: #aaaaaa;
+      color: var(--text-secondary);
       border-top: 1px solid #333;
+    }
+
+    /* --- NEW --- Footer Links Style */
+    .footer-links {
+        margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        margin: 0 15px;
+        transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+        color: var(--accent-yellow);
+        text-decoration: underline;
+    }
+
+    .footer-links span {
+        color: #444; /* Subtle separator */
+    }
+    /* --- END NEW --- */
+    
+    @media (max-width: 768px) {
+        header h1 { font-size: 2.5rem; }
+        header p { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
   <header>
     <img src="hatchmatelogo.jpg" alt="Hatchmate Logo" />
-    <h1>Welcome to Hatchmate</h1>
-    <p>Your ultimate Discord bot for managing servers and engaging users.</p>
+    <h1>HatchMate</h1>
+    <p id="tagline">Your all-in-one Discord solution for moderation, community, and fun.<span class="typing-cursor">|</span></p>
   </header>
 
   <main>
-    <section id="features">
-      <h2>Features</h2>
-      <ul>
-        <li>Customizable quiz games</li>
-        <li>Moderation tools (kick, ban, announce)</li>
-        <li>Interactive slash commands</li>
-        <li>Server statistics and member tracking</li>
-      </ul>
+    <section class="section" id="features">
+      <h2 class="section-title">Core Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>👑 Professional Moderation</h3>
+          <p>Automod, welcome messages, and all the tools you need to keep your server safe and clean.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🎲 Casino Economy</h3>
+          <p>An engaging economy with currency, levels, daily rewards, leaderboards, and casino games like slots and coinflip.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🧠 Advanced Quiz Engine</h3>
+          <p>Host exciting trivia with a unique, multi-stage Rapid Fire event system that's managed by your admins.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="links">
-      <h2>Important Links</h2>
-      <ul>
-        <li><a href="/terms.html">Terms of Service</a></li>
-        <li><a href="/privacy.html">Privacy Policy</a></li>
-        <li><a href="https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&scope=bot">Add Hatchmate to your server</a></li>
-      </ul>
+    <section class="section" id="links">
+        <div class="cta-section">
+            <h2 class="section-title">Get Started</h2>
+            <!-- This Client ID has been filled in from your previous request -->
+            <a href="https://discord.com/oauth2/authorize?client_id=1391361345403883600" class="btn primary" target="_blank">Add HatchMate to Your Server</a>
+            <a href="info.html" class="btn">View Commands & Setup Guide</a>
+        </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Hatchmate. All rights reserved.</p>
+    <!-- *** NEWLY ADDED SECTION *** -->
+    <div class="footer-links">
+      <a href="terms.html">Terms of Service</a>
+      <span>|</span>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <!-- *************************** -->
+    <p>© 2025 Hatchmate by IdeaHatch. All rights reserved.</p>
   </footer>
 
   <script>
-    // Placeholder JS for future interactions
-    console.log("Welcome to Hatchmate — Bot loaded successfully.");
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // --- COOL TYPING EFFECT ---
+        const taglineEl = document.getElementById('tagline');
+        const text = taglineEl.innerText.replace('|','');
+        taglineEl.innerText = '';
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                taglineEl.innerHTML = text.substring(0, i + 1) + '<span class="typing-cursor">|</span>';
+                i++;
+                setTimeout(typeWriter, 50); // Adjust typing speed here (in ms)
+            } else {
+                taglineEl.innerHTML = text + '<span class="typing-cursor">|</span>';
+            }
+        }
+        typeWriter();
+        
+        
+        // --- EFFICIENT SCROLL REVEAL ANIMATION ---
+        const sections = document.querySelectorAll('.section');
+        
+        const revealSection = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observing once it's visible
+                }
+            });
+        };
+        
+        // This is more performant than a scroll event listener
+        const sectionObserver = new IntersectionObserver(revealSection, {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15 // Section becomes visible when 15% is in view
+        });
+        
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+    });
   </script>
 </body>
 </html>
